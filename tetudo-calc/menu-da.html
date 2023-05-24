@@ -1,0 +1,222 @@
+<!-- <style>
+  .inner .mo_Open {
+    text-align: center;
+
+  } -->
+</style>
+<div class="toggle-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div id="mask"></div>
+<nav>
+  <div class="inner">
+    <ul>
+      <li><a href="https://tetete.dev/web/tetudo-calc/">Home</a></li>
+      <li><a href="https://tetete.dev/web/tetudo-unchin/">運賃の比較</a></li>
+      <li><a href="">How to Use</a></li>
+      <li></li>
+      <li><a href="./total_Graf.html">グラフで見る(準備中)</a></li>
+      <li id="mo_Open_M_Graf" class="mo_Open"><a>このページのグラフ</a></li>
+
+      <li>
+        <form action="./" method="GET" id="select_company">
+          <label class="selectbox-003" style="width: 100%;">
+
+            <select name="select_company" onchange="submitForm_c()" 
+                    style="font-weight: normal; border: none; border-radius: 0;">
+              <option value="0" disabled selected> 会社をえらぶ</option>
+              <optgroup label="JR">
+                <option value="1"> JR北海道 Hokkaido</option>
+                <option value="2"> JR東日本 East</option>
+                <option value="3"> JR東海　 Central </option>
+                <option value="4"> JR西日本 West</option>
+                <option value="5"> JR四国　 Shikoku</option>
+                <option value="6"> JR九州　 Kyushu</option>
+              </optgroup>
+              <optgroup label="私鉄">
+                <option value=""> 伊豆急</option>
+                <option value=""> 東急</option>
+              </optgroup>
+            </select>
+          </label>
+
+          <script> function submitForm_c() { document.getElementById("select_company").submit(); } </script>
+        </form>
+      </li>
+
+      <!-- <li id="mo_Open_M_del_th" class="mo_Open"><a>個別データ削除</a></li> -->
+      <li class="" id="M_del_th_open" data-bs-toggle="modal" data-bs-target="#M_del_th"><a>個別データ削除</a></li>
+
+      <!-- <li id="mo_Open_M_del_Al" class="mo_Open"><a>全データ削除</a></li> -->
+      <li class="" id="M_del_Al_open" data-bs-toggle="modal" data-bs-target="#M_del_Al"><a>全データ削除</a></li>
+
+      <li id="mo_Open_M_csv_in" class="mo_Open"><a>CSVインポート　</a></li>
+      <li id="mo_Open_M_csv_ou" class="mo_Open"><a>CSVエクスポート</a></li>
+
+      <li id="mo_Open_M_use_gi" class="mo_Open"><a>技術仕様</a></li>
+
+      <li>　</li>
+      <li class="btn_moji" style="width: 100%; padding: 20px 0;">もじの大きさ<br>
+        <input style="width: 100%;" id="moji_range" type="range" min="80" max="150" step="5" value="" />
+      </li>
+      <li><a class="btn_moji" id="btn_moji_Now">
+          <p>100 %</p>
+        </a></li>
+    </ul>
+  </div>
+</nav>
+<!-- -------- -->
+<section id="M_Graf" class="modal">
+  <div class="modal-content" id="" style="overflow: auto;">
+    <div class="modal-body" style=" grid-area: 1 / 1 / 3 / 3; align-items: flex-start;">
+      <div id="M_Graf_g">
+        <div class="chart_item Chart_0" style="overflow: auto;">
+          <canvas id="Chart_0"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bottom">
+      <input class="btn btn_Cancel" type="button" value="とじる">
+    </div>
+  </div>
+</section>
+<!-- -------- -->
+<!-- <section id="M_del_th" class="modal M_delete">
+  <div class="modal-content" id="">
+    <div class="modal-head">
+      <h1><span>📝</span> 個別削除</h1>
+    </div>
+
+    <div class="modal-body" style="text-align: center; line-height: 1.5;">
+      <p>下記の記録を削除します。<br>
+        削除すると、元に戻せなくなります。<br>
+        (CSVエクスポート時を除く)
+      </p>
+      <div class="modal-mes" id=""></div>
+    </div>
+
+    <div class="modal-bottom">
+      <input class="btn btn_Done" id="btn_del_th" type="button" value="🗑️">
+      <input class="btn btn_Cancel" type="button" value="❌">
+    </div>
+  </div>
+</section> -->
+<!-- -------- -->
+<!-- <section id="M_del_Al" class="modal M_delete">
+  <div class="modal-content" id="">
+    <div class="modal-head">
+      <h1><span>📝</span> サイトデータ削除</h1>
+    </div>
+    <div class="modal-body" style="text-align: center; line-height: 1.5;">
+      <p>Web ブラウザーに保存している情報をすべて削除します。<br>
+        削除後はこのページを閉じてください。<br>
+        他のページに戻ると、新たにデータが保存されます。
+      </p>
+      <div class="modal-mes" id=""></div>
+    </div>
+    <div class="modal-bottom">
+      <input class="btn btn btn_Done" id="btn_del_Al" type="button" value="🗑️">
+      <input class="btn btn_Cancel" type="button" value="❌">
+    </div>
+  </div>
+</section> -->
+<!-- -------- -->
+<section id="M_csv_in" class="modal M_csv">
+  <div class="modal-content" id="">
+    <div class="modal-head">
+      <h1><span>📥</span> CSVインポート</h1>
+    </div>
+    <div class="modal-body">
+      <p>記録を読み込みます。<br><br>取り込みに失敗した路線は反映されません。<br>
+        ※記録がある路線は、データが上書きされます。
+      </p>
+      <!-- <div class="modal-mes" id="mes_csv_import"></div> -->
+    </div>
+    <div class="modal-bottom">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" name="submit" value="Upload" />
+    </form>
+      <!-- <div class="btn file_button">
+        ファイルを選択
+        <input class="file_input" id="csv_inport" type="file" accept=".csv">
+      </div> -->
+    </div>
+  </div>
+</section>
+<!-- -------- -->
+<section id="M_csv_ou" class="modal M_csv">
+  <div class="modal-content" id="">
+    <div class="modal-head">
+      <h1><span>📤</span> CSVエクスポート</h1>
+    </div>
+    <div class="modal-body">
+      <p>記録を書き出します。<br><br> ファイルをコピーして取り込みする事で他の端末と記録を同期する事もできます。</p>
+    </div>
+    <div class="modal-bottom">
+      <input class="btn" id="csv_export" type="button" value="書き出し">
+      <input class="btn btn_Cancel" type="button" value="やめる">
+    </div>
+  </div>
+</section>
+<!-- -------- -->
+<section id="M_use_gi" class="modal">
+  <div class="modal-content" id="">
+    <div class="modal-head">
+      <h1><span>🖥️</span>技術仕様</h1>
+    </div>
+    <div class="modal-body" style="justify-content: flex-start;">
+      <p>このサイトの使用技術など</p><br><br>
+
+      <p style="background-color:#474747; border-radius: 20px;">🔴おことわり<br><br>
+        予告なく、機能提供を終了、中断する場合があります。<br>
+        サーバーが休止するため、新幹線が走行しない時間＋ラッシュ帯までは利用できない場合があります。<br>
+        また、このサイトを利用し発生した損害の責任は負いません。<br>
+        例：端末不具合、数値の相違、列車乗り遅れ・降り遅れ　等
+      </p>
+      <br><br>
+      <p style="background-color:#474747; border-radius: 20px;">📌このサイトではローカルストレージを使用しています。<br><br>
+        操作している端末に各記録データが保存されており、
+        サーバーにデータを送信する機能・操作はありません。<br>
+        （表示する会社を選択する際のみ、会社を区別する１ケタの数字が送信されます。）
+      </p>
+      <br><br>
+      <p style="background-color:#474747; border-radius: 20px;">📌使用されるストレージの量<br><br>
+        全路線を最大値（完乗）まで入力したとしても、１MB程度です。
+      </p>
+      <br><br>
+      <p style="background-color:#474747; border-radius: 20px;">🚨表示がおかしいとき<br><br>
+        キャッシュクリアをお試しください。<br>
+        また、CSVエクスポートで記録のバックアップをした上で全記録消去をしてください。
+      </p>
+
+
+      <ul>
+        <li>フロントエンド（見える側）<br>HTML5・CSS・PHP</li><br>
+        <li>バックエンド（裏方）<br>Javascript（Jquery）・Node.js・MariaDB</li><br>
+        <li>制作期間<br>2023/01~</li><br>
+      </ul>
+      <ul>
+        <li>PHP(PDO)→DB→(PDO)→</li><br>
+        <li>PHPでループ出力</li><br>
+        <li></li><br>
+      </ul>
+
+
+    </div>
+    <div class="modal-bottom" style="margin-top: 0;">
+      <input class="btn btn_Cancel" type="button" value="とじる">
+    </div>
+  </div>
+</section>
+<!-- -------- -->
+<script src="./menu-da.js"></script>
+<script src="./menu-modal.js"></script>
+<script src="./csv_process.js"></script>
+<script>
+
+</script>
+
+<!-- https://tcd-theme.com/2021/08/javascript-modalwindow.html -->

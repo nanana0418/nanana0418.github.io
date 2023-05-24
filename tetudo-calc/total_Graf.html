@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, maximum-scale=1.0,minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+    <title>Tortal 完乗率の計算　-nasu12-</title>
+
+    <link rel="stylesheet" type="text/css" href="../reset.css">
+    <link rel="stylesheet" type="text/css" href="./load.css">
+    <link rel="stylesheet" type="text/css" href="./total_Graf.css">
+    
+    <link rel="stylesheet" type="text/css" href="./common.css">
+    <link rel="stylesheet" type="text/css" href="./menu-da.css">
+    <link rel="stylesheet" type="text/css" href="./modal.css">
+</head>
+<body>
+<div id="loader-bg">
+    <img id="image" src="./web_images/toka.png">
+</div>
+<div id="wrap">
+    <!-- ロード後に表示させたい内容 -->
+    <section id="title">
+        <h2>
+            <div>
+                JR　6社合計表示
+            </div>
+        </h2>
+        <div id="navArea"></div>
+    </section>
+
+<div class="container">
+    <div class="item-pea">
+        <div class="chart_item chart_main"> <canvas id="chart_main"></canvas></div>
+        <!-- <div class="chart_item Chart_0"><canvas id="Chart_0"></canvas></div> -->
+        <div class="chart_item Chart_1"><canvas id="Chart_1"></canvas></div>
+        <div class="chart_item Chart_2"><canvas id="Chart_2"></canvas></div>
+        <div class="chart_item Chart_3"><canvas id="Chart_3"></canvas></div>
+        <div class="chart_item Chart_4"><canvas id="Chart_4"></canvas></div>
+        <div class="chart_item Chart_5"><canvas id="Chart_5"></canvas></div>
+        <div class="chart_item Chart_6"><canvas id="Chart_6"></canvas></div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
+<!-- CDN -->
+<!-- <script type="text/javascript" src="https://code.typesquare.com/static/ZDbTe4IzCko%253D/ts106f.js" charset="utf-8"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- CDN -->
+<script>
+    "use strict"; console.debug('total_Graf.html');
+
+    $(function () {
+        var h = $(window).height();
+
+        $('#wrap').css('display', 'none');
+        $('#loader-bg ,#loader').height(h).css('display', 'block');
+
+        document.querySelector(`#image`).animate(
+            [{ transform: 'translateX(100%)' }, { transform: 'translateX(-1000px)' }],
+            { duration: 2000, iterations: Infinity });
+    });
+
+    $(window).load(function () { //すべての読み込みが完了したら実行
+        $('#loader-bg').delay(1000).fadeOut(200);
+        $('#loader').delay(100).fadeOut(300);
+        $('#wrap').css('display', 'block');
+    });
+
+    $(function () { setTimeout('stopload()', 10000); });//5秒たったら強制的にロード画面を非表示
+
+    function stopload() {
+        $('#wrap').css('display', 'block');
+        $('#loader-bg').delay(900).fadeOut(200);
+        $('#loader').delay(100).fadeOut(300);
+    }
+ // ------------------------------   
+    $('#navArea').load('menu-da.html');
+    sessionStorage.setItem('co_No',10);
+// ------------------------------
+</script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+<!-- <script src="./calc_top.js"></script> -->
+<script src="./menu-modal.js"></script>
+<script src="./csv_process.js"></script>
+<script src="./index.js"></script>
+<script src="./drow.js"></script>
+
+

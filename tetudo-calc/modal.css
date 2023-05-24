@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 150%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #000000b5;
+    z-index: 1;
+    overflow: auto;
+    color: #FFF;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.modal-content {
+    display: grid;
+
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 5rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 80px 1fr 80px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    background-color: #313131;
+    box-shadow: 0px 10px 10px 0px #777777;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 821px) {
+    .modal-content {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .modal-content {
+        width: 370px;
+        height: 400px;
+    }
+}
+
+.modal-head {
+    grid-area: 1 / 1 / 2 / 3;
+    width: 90%;
+    margin: auto;
+
+    /* background-color: #c8ff00bd; */
+    border-bottom: #FFF 2px solid;
+
+}
+
+.modal-head h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+
+    font-size: 2rem;
+    word-wrap: break-word;
+    color: #FFF;
+}
+
+.modal-body {
+    grid-area: 2 / 1 / 3 / 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 90%;
+    height: 100%;
+
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0;
+
+    font-size: 20px;
+    /* font-weight: bold; */
+
+
+    overflow-y: auto;
+    /* background-color: rgba(255, 230, 0, 0.645); */
+}
+
+.modal-body .subTitle {
+    font-size: 1.2rem;
+
+    margin: 18px 0;
+}
+
+.modal-mes {
+    display: flex;
+    justify-content: center;
+
+    width:85% ;
+    height: 20%;
+    margin: 0 auto;
+
+    overflow-y: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    background-color: #7a7a7afa;
+    flex-direction: column;
+    align-items: center;
+
+    /* border: #FFF 3px solid; */
+    border-radius: 10px;
+}
+
+.modal #M_Graf_g {
+    width: 70%;
+    height: fit-content;
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+}
+
+/* @media screen and (max-width: 740px) {
+    #M_Graf_g {
+        width: 100% !important;
+        height: 100% !important;
+    }
+} */
+
+.modal-bottom {
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    width: 100%;
+}
+
+.file_button {
+    display: inline-block;
+    position: relative;
+
+    padding: 0.8em 0;
+
+    overflow: hidden;
+    /* -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease; */
+}
+
+.file_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.btn_Done{
+    background-color: #fb1f4be6;
+}

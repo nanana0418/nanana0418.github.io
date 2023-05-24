@@ -1,0 +1,52 @@
+  /* 画面下部 */
+  #summary {
+    display: grid;
+    /* よこ */
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* たて */
+    grid-template-rows: 30px 30px;
+
+    width: 100%;
+    margin: 0px auto;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    /* background-color: rgb(78, 78, 78); */
+
+    font-size: 20px;
+    color: #fff;
+  }
+
+  #summary .total-items {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+    margin: 0 auto;
+    padding: 10px auto;
+
+    color: #fff;
+  }
+
+  #summary #gotoup {
+    grid-column: 4;
+    grid-row: 1 / 2;
+
+    padding: 30px 0;
+  }
+
+  #summary #gotoup a {
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  /* .total-items input {
+    grid-column: 4;
+    grid-row: 2 / 2;
+    height: 30px;
+
+    padding: 5px auto;
+    border: 0px #000 solid;
+    border-radius: 10px;
+  } */

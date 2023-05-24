@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+html {
+    width: 100%;
+    min-width: 390px;
+
+    /* overflow-y: scroll; */
+
+    background-color: rgb(255, 255, 255);
+
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 1.1rem;
+}
+
+.toast {
+    font-family: "BIZ UDPGothic";
+    font-size: 1rem;
+}
+
+/* チェックボックス */
+input[type="checkbox"] {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+::placeholder {
+    font-size: 90%;
+}
+
+/* ボタン */
+.btn {
+    width: 40%;
+    height: 50px;
+    margin: 8px auto;
+
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #2772DB;
+}
+
+/* プルダウン */
+/* select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-indent: 1em;
+    background: #EEE no-repeat;
+    background-size: 20px 10px;
+    background-position: right center;
+    width: 100%;
+    height: 0px;
+    line-height: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    margin-bottom: 5px;
+} */
+
+/* @-moz-document url-prefix() { */
+    /* for firefox */
+    /* select {
+        background: none;
+        background-color: #FFF;
+    }
+} */
+
+.selectbox-003 {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: 100%;
+}
+
+.selectbox-003::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #535353;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.selectbox-003 select {
+    display: block;
+    text-align-last: center;
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    /* padding: .4em calc(.8em + 30px) .4em .8em; */
+    padding:0 auto;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+option{
+    text-align: left;
+}
+
+.btn:hover {
+    border: 2px solid#dbd827;
+}
+
+/* トグルのON/OFFを記憶するチェックボックスを非表示にする
+.toggle-check input[type="checkbox"] {
+    display: none;
+}
+
+/* トグルの外観 */
+/* .toggle-item {
+    width: 120px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 1;
+    background-color: lightgray;
+} */
+
+/* トグル内部で動くボックス */
+/* .toggle-item>div {
+    width: 50%;
+    background: gray;
+    transition: .2s;
+} */
+
+/* トグル外観とその内部で高さ・丸さ・余白を共通にする */
+/* .toggle-item,
+.toggle-item>div {
+    height: 60px;
+    border-radius: 50px;
+    margin: auto 0;
+} */
+
+/* ON時のトグル内部の移動 */
+/* .toggle-check>input[type="checkbox"]:checked+.toggle-item>div {
+    transform: translateX(100%);
+    background: #006eff;
+} */
